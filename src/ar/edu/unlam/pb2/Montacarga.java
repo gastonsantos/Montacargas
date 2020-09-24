@@ -23,14 +23,15 @@ public void setPesoMaximo(Double pesoMaximo) {
 
 //Agrego CARGA siempre y cuando no pase el peso maximo establecido
 public Boolean carga(Carga carga1){
-	Boolean exito= false;
-if(pesoMaximo >=acumulado){
+	
+if(pesoMaximo >= carga1.getCarga()+acumulado){
 	lista.add(carga1);
-	exito= true;
-	return exito;
+	
+	return true;
 	
 }else{
-	return exito;
+	
+	return false;
 }
 	
 	

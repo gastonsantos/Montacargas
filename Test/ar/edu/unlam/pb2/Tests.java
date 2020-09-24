@@ -11,10 +11,18 @@ public class Tests {
 	public void testQueAgregaCarga(){
 		Montacarga montacarga1 = new Montacarga(200.0);
 		Carga carga1 = new Carga(150.0);
+		montacarga1.obtenerCarga();
 		assertTrue(montacarga1.carga(carga1));
 	}
 	
-	
+	@Test 
+	public void testQueNoAgregaCargaSiPasaElPesoMaxmio() {
+		Montacarga montacarga1 = new Montacarga(50.0);
+		Carga carga1 = new Carga(150.0);
+		montacarga1.obtenerCarga();
+		assertFalse(montacarga1.carga(carga1));
+		
+	}
 	@Test
 	public void testQueObtieneLaCantidadDePesoEnMontacarga() {
 		
